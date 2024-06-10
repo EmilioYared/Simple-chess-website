@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Website</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+</head>
+<body>
+    <video autoplay muted loop id="video-bg">
+        <source src="starsbg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav>
+        <a href="contact.html" class="nav-link"><span>Contact</span></a>
+        <a href="about.html" class="nav-link"><span>About</span></a>
+        <a href="TutorialPage.html" class="nav-link"><span>Tutorial</span></a>
+        <a href="usermenu.html" class="nav-link"><span>Login</span></a>
+    </nav>
+    <div id="container">
+        <!--<hr>-->
+        <div id="text" class="containerdiv">
+        <p id="welc">Welcome to our <br>Chess Website</p>
+        <p id="piece"></p>
+        </div>       
+        <div id="menu" class="containerdiv">
+            <a href="index.html"><button >Player vs Player</button></a>
+            <a href="indexcomputer.html"><button >Player vs Computer</button></a>
+            <a href="indexanalysis.html"><button>Analysis</button></a>
+        </div>
+    </div>
+    <footer class="containerdiv">
+        <p id="creators">Created by: Anthony Sfeir GM & Emilio Yared GM</p>
+    </footer>
+    <script>
+        // Array of chess pieces
+        const chessPieces = ['♔', '♕', '♖', '♗', '♘', '♙', '♚', '♛', '♜', '♝', '♞', '♟'];
+
+        // Function to show a random chess piece
+        function showRandomChessPiece() {
+            // Get a random index from the array
+            const randomIndex = Math.floor(Math.random() * chessPieces.length);
+
+            // Display the random chess piece
+            const chessPieceElement = document.getElementById('piece');
+            chessPieceElement.textContent = chessPieces[randomIndex];
+        }
+        // Set interval to update chess piece every 2 seconds (adjust as needed)
+        setInterval(showRandomChessPiece, 2000);
+        /* new code sinpet---------------------------------------------------------*/
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', function (event) {
+            if (event.code === konamiCode[konamiIndex]) {
+                konamiIndex++;
+
+                if (konamiIndex === konamiCode.length) {
+                    const websitecreators = document.getElementById('creators');
+                    websitecreators.textContent = 'Created by: Anthony Sfeir (1300) & Emilio Yared (900)';
+                    // Easter egg action (reveal hidden feature)
+                    alert('Konami Code activated!');
+                    konamiIndex = 0; // Reset for future use
+                }
+            } else {
+                konamiIndex = 0; // Reset if a wrong key is pressed
+            }
+        });
+        /* new code sinpet---------------------------------------------------------*/
+    </script>
+   
+
+</body>
+</html>
