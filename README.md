@@ -1,5 +1,1 @@
-This is a very simple chess website
-You can run it from homepage.html
-there is a brief tutorial on chess
-you can play against someone on the same machine
-and also play against the computer
+This is a very simple chess website, you can start it from homepage.html, there is a brief tutorial on how to play chess, you can play against your friend on the same machine or you can play against the computer
